@@ -1,0 +1,40 @@
+<html>
+<head>
+<script language="JavaScript">
+function cal()
+{
+	var str=document.frm.txt.value;
+	var pass=document.frm.t2.value;
+	
+	if(str.length==0)
+	{
+		alert("Please enter value");
+	}
+	
+	/*else
+	{
+		alert("Thank U");
+	}*/	
+
+	if (isNaN(str))
+	{
+		alert("only No. allowed");  // if it is a string
+	}
+	/*else
+	{
+		alert("Thank U");
+	}*/	
+
+}
+
+</script>
+</head>
+
+
+<body>
+<form name=frm>
+<input type=text name=txt>
+<input type=button value=click onClick="cal()">
+</form>
+</body>
+</html>

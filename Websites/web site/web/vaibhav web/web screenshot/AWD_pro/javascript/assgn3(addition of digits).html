@@ -1,0 +1,25 @@
+<html>
+<html>
+<head>	
+<script>
+	function add_of_digits()
+	{
+    var addition=0;
+    var no=parseInt(document.frm1.t1.value);
+    while(no>0)
+     {
+       addition=addition+no%10;
+       no=Math.floor(no/10);
+      }
+    alert("Addition of the digits =  "+addition); 
+ }
+</script>
+</head>
+<body>
+<form name="frm1"> 
+Enter any digit::<input type="text" name="t1"><br> 
+<input type="button" value="click" onclick="add_of_digits()">   
+</form> 	
+</script>
+</body>
+</html>

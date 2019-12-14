@@ -1,0 +1,19 @@
+		private   Default   protected   public
+
+same class       Y		Y      Y           Y
+
+
+same package
+subclass	 N		Y 	Y	Y
+
+
+Same package
+non-subclass     N               Y	Y	Y
+
+
+Diff package
+subclass	N		N	Y  	Y
+
+
+Diff  package
+Non-subclass 	N		N	N	Y

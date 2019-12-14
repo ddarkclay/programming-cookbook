@@ -1,0 +1,48 @@
+"Compile
+• Compile the interface and classes:
+javac HelloInterface.java Hello.java
+javac HelloServer.java HelloClient.java
+• Create the class files for stubs:
+rmic Hello
+• rmic creates:
+Hello_Skel.class skeleton - server-side stub
+Hello_Stub.class client-site stub  "
+
+We first compile the remote interface and classes using javac. Then we generate the 
+class files for the client and server stubs with the rmi compiler:
+rmic Hello
+This produces two class files:
+Hello_Skel.class is the skeleton (a name for a server-stub)
+Hello_Stub.class is the client stub function
+______________________________
+
+"Run
+• Start the object registry (in the background):
+rmiregistry &
+• Start the server (in the background):
+java -Djava.security.policy=policy 
+HelloServer &
+• Run the client:
+java HelloClient testing abcdefgh
+• See the output:
+gnitset
+Hello, world!
+hgfedcba
+Hello, world!  "
+
+Now we’re ready to run the program.
+If the registry is not running, it must be started. Otherwise the server will not be able 
+to register the object and the client will not be able to look it up.
+We start it in the background with:
+rmiregistry &
+If we wanted it to listen on a different port than 1099, we would specify the port 
+number on the command line. For example, to listen on port 5511:
+rmiregistry 5511 &
+Next we start the server (also in the background) by running:
+java -Djava.security.policy=policy HelloServer &
+where the -D flag sets the name of the file containing our security policy (our file is 
+named policy and is in the current directory).
+Finally, we can run the client with:
+java HelloClient testing abcdefg
+NOTE: be sure to kill the registry and server processes when you’re done.
+That’s it!

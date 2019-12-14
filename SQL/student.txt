@@ -1,0 +1,27 @@
+create table Student(
+RollNo Number(4),
+Name varchar2(20),
+Address varchar2(40),
+City varchar2(10),
+BDate date,
+Feespaid Number(10,2));
+
+Select * from Student;
+
+Desc Student;
+
+Insert into Student values(1,'Aman','Pimpri','Pune','02-Jan-99',8500);
+Insert into Student values(2,'Zaved','Kalyan','Mumbai','17-Mar-97',5000);
+Insert into Student values(3,'Mayur','Chandani Chok','Delhi','22-Sep-95',9500);
+Insert into Student values(4,'Shubham','Hadapsar','Pune','26-dec-1999',6200);
+Insert into Student values(5,'Akhil','Dharavi','Mumbai','17-Jul-97',5000);
+
+Select Name from student; 
+
+Select Name from student where city='Pune'; 
+Select * from Student order by RollNo;
+Select * from Student where Feespaid != 5000;
+
+Select * from student;
+Select Name from Student where Name Like 'A%';
+Select Name,City from Student where City Like '_u%';

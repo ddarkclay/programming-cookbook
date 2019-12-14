@@ -1,0 +1,418 @@
+1]
+Select * from EMP_Nov_18 order by Emp_no;
+Select * from Dept_Nov_18;
+Drop Table EMP_Nov_18;
+Select * from EMP_Nov_18 order by Emp_no;
+Create table Dept_Test( Deptno number(2) Promary key, Dname varchar2(10), loc varchar2(20));
+Create table Dept_Test( Deptno number(2) Primary key, Dname varchar2(10), loc varchar2(20));
+Create table Dept_Test( Deptno number(2) Primary key, Dname varchar2(10), loc varchar2(20));
+Insert into dept_Test values(10,'Finance','Pune');
+
+
+2]
+Insert into dept_Test values(50,'Finance','Delhi');
+Insert into dept_Test values(40,'Account','Pune');
+Select * from Dept_Test order by Dept_no;
+Select * from Dept_Test order by Deptno;
+Insert into dept_Test values(20,'Account','Mumbai');
+Insert into dept_Test values(30,'Inventory','Delhi');
+Select * from Dept_Test order by Deptno;
+
+Create table Employee_Test(
+Empno number(4) primary key,
+Deptno number(2) references Dept_Test,
+name varchar2(20),
+City varchar2(10),
+Salary number(12,2),
+JoinDate date,
+Commission number(4),
+Job varchar2(15));
+
+Create table Employee_Test(
+Empno number(4) primary key,
+Deptno number(2) references Dept_Test,
+name varchar2(20),
+City varchar2(10),
+Salary number(12,2),
+JoinDate date,
+Commission number(4),
+Job varchar2(15));
+
+Insert into Employee_Test values(101,10,'Ajay',Pune,15000,'25-May-17',120,'Accountant');
+Insert into Employee_Test values(101,10,'Ajay','Pune',15000,'25-May-17',120,'Accountant');
+Select * from Employee_Test order by Emp_no;
+Select * from EMP_Nov_18 order by Empno;
+Select * from Employee_Test order by Empno;
+Insert into Employee_Test values(101,70,'Ajay','Pune',15000,'25-May-17',120,'Accountant');
+
+
+3]
+Insert into Employee_Test values(102,20,'Ajay','Pune',15000,'25-May-17',120,'Accountant');
+Select * from Employee_Test order by Empno;
+Update Employee_Test set Name = 'Vijay', City = 'Delhi' , Job = 'Clerk' where Empno = 102;
+Select * from Employee_Test order by Empno;
+Insert into Employee_Test values(103,10,'Sujay','Delhi',25000,'12-Jan-16',220,'Manager');
+Select * from Employee_Test order by Empno;
+Insert into Employee_Test values(104,30,'varun','Hydrabad',22000,'02-Feb-16',null,'Staff');
+Select * from Employee_Test order by Empno;
+Insert into Employee_Test values(105,40,'navin','Delhi',30000,'12-Oct-16',220,'Manager');
+Select * from Employee_Test order by Empno;
+Select name,dname,loc from emp,dept where Employee_Test.Deptno=Dept_Test.Deptno;
+Select name,dname,loc from Emplyee_Test,Dept_Test where Employee_Test.Deptno=Dept_Test.Deptno;
+Select name,dname,loc from Employee_Test,Dept_Test where Employee_Test.Deptno=Dept_Test.Deptno;
+Select * from Dept_Nov_18 order by Dept_no;
+Select * from Dept_Nov_18 order by Dept_no;
+
+4]
+Create table EMP_Nov_18(
+Emp_no number(5),
+Name varchar2(20),
+City varchar2(10),
+Salary number(10,2),
+Join_Date date,
+Job varchar2(10),
+Commission number(3),
+Dept_no number(4) references Dept_Nov_18);
+
+Create table EMP_Nov_18(
+Emp_no number(5),
+Name varchar2(20),
+City varchar2(10),
+Salary number(10,2),
+Join_Date date,
+Job varchar2(10),
+Commission number(3),
+Dept_no number(4) references Dept_Nov_18);
+
+Select * from Dept_Nov_18 order by Dept_no;
+Insert into EMP_Nov_18 values(101,'Vijay','Pune',17000,'15-Jan-17','Clerk',500,1011);
+Select * from EMP_Nov_18 order by Emp_no;
+Insert into EMP_Nov_18 values(102,'Sujay','Mumbai',15000,'13-June-17','Accountant',700,1012);
+Insert into EMP_Nov_18 values(103,'Ashish','Delhi',27000,'19-Mar-17','Manager',null,1013);
+Select * from EMP_Nov_18 order by Emp_no;
+Insert into EMP_Nov_18 values(104,'Aadesh','Nasik',18000,'15-Feb-16','Clerk',300,1011);
+Insert into EMP_Nov_18 values(105,'Astad','Nasik',22000,'02-Oct-16','Manager',300,1012);
+Select * from EMP_Nov_18 order by Emp_no;
+Select * from EMP_Nov_18 order by Salary;
+Select Dept_no,count(*) from EPM_Nov_18 group by Dept_no;
+Select Dept_no,count(*) from EMP_Nov_18 group by Dept_no;
+Select Name from Emp_Nov_18 where Salary <= 20000;
+
+5]
+Select Name from EMP_Nov_18 where Name like '_s%';
+Select Name from EMP_Nov_18 where Job = 'Manager';
+Create table Product(
+Prod_id number(5) primary key,
+prod_Name varchar2(20),
+Price number(5,2));
+
+Create table Product_Nov_18(
+Prod_id number(5) primary key,
+prod_Name varchar2(20),
+Price number(5,2));
+
+Create table Product_Nov_18(
+Prod_id number(5) primary key,
+prod_Name varchar2(20),
+Price number(5,2));
+
+Select * from Product_Nov_18 order by Prod_id;
+Insert into Product_Nov_18 values(111,'Brush',30);
+Insert into Product_Nov_18 values(121,'Oil',80);
+Insert into Product_Nov_18 values(131,'Grains',50);
+Select * from Product_Nov_18 order by Prod_id;
+Insert into Product_Nov_18 values(141,'Bottal',100);
+Insert into Product_Nov_18 values(151,'Chair',240);
+Select * from Product_Nov_18 order by Prod_id;
+
+Create table Customer_Nov_18(
+Cust_id number(5),
+Cust_Name varchar2(20),
+Prod_id number(5) references Product_Nov_18,
+City varchar2(10),
+Mobile_no number(10),
+Date_of_purchase date);
+
+
+Create table Customer_Nov_18(
+Cust_id number(5),
+Cust_Name varchar2(20),
+Prod_id number(5) references Product_Nov_18,
+City varchar2(10),
+Mobile_no number(10),
+Date_of_purchase date);
+
+
+
+6]
+Select * from Customer_Nov_18 order by Cust_id;
+Insert into Customer_Nov_18 values(1,'Suraj',111,'Mumbai',555555555,'02-Jan-18');
+Insert into Customer_Nov_18 values(2,'Monoj,121,'Delhi',9188888888,'11-Mar-17');
+Insert into Customer_Nov_18 values(2,'Monoj',121,'Delhi',9188888888,'11-Mar-17');
+Insert into Customer_Nov_18 values(3,'Yash',121,'Mumbai',2222222222,'10-Oct-17');
+Select * from Customer_Nov_18 order by Cust_id;
+Insert into Customer_Nov_18 values(4,'John',131,'Nasik',9188888888,'19-Jul-17');
+Insert into Customer_Nov_18 values(5,'Sanjay',151,'Pune',9144444444,'10-Oct-17');
+Select * from Customer_Nov_18 order by Cust_id;
+Select Name from Customer_Nov_18 where Name like '____';
+Select Cust_Name from Customer_Nov_18 where Cust_Name like '____';
+Select * from Customer_Nov_18 where Mobile_no like '91%';
+Select * from Customer_Nov_18 where City = 'Mumbai';
+Select max(Price) from Product_Nov_18;
+Select prod_name,max(Price) from Product_Nov_18;
+
+
+
+7]
+Select * from Product_Nov_18 where Price = (Select max(Price) from Product_Nov_18);
+Select * from Customer_Nov_18,Product_Nov_18 where Customer_Nov_18.Price = (Select max(Customer_Nov_18.Price) from Product_Nov_18);
+Select * from Customer_Nov_18,Product_Nov_18 where Customer_Nov_18.Price = (Select max(Price) from Product_Nov_18);
+Select * from Product_Nov_18 where Price = (Select max(Price) from Product_Nov_18);
+Select * from Customer_Nov_18,Product_Nov_18 where Product_Nov_18 = '10-Oct-17';
+Select Cust_Name,Prod_Name,Date_of_purchase from Customer_Nov_18,Product_Nov_18 where Product_Nov_18.Date_of_purchase = '10-Oct-17';
+Select Cust_Name,Prod_Name,Date_of_purchase from Customer_Nov_18,Product_Nov_18 where Date_of_purchase = '10-Oct-17';
+Select * from Customer_Nov_18 order by Cust_id;
+Select Cust_Name,Prod_Name,Date_of_purchase from Customer_Nov_18 where Date_of_purchase = '10-Oct-17';
+Select Cust_Name,Date_of_purchase from Customer_Nov_18 where Date_of_purchase = '10-Oct-17';
+Select * from Customer_Nov_18 where Date_of_purchase = '10-Oct-17';
+Create table Dept_Nov_18(
+Dept_no number(4) primary key,
+D_Name varchar2(20),
+Location varchar2(10));
+
+Create table Dept_Nov_18(
+Dept_no number(4) primary key,
+D_Name varchar2(20),
+Location varchar2(10));
+
+Select * from Dept_nov_18 order by Dept_no;
+Insert into Dept_Nov_18 values(1012,'Account','Pune');
+
+
+
+
+8]
+Select * from Dept_nov_18 order by Dept_no;
+Select Name from Employee_Nov_18 where Name like 'A' or 'M';
+Select Name from Employee_Nov_18 where Name like 'A' OR 'M';
+Select Name from Employee_Nov_18 where Name like 'A%' OR 'M%';
+Select Name from Employee_Nov_18 where Name like 'A%'
+Select Name from EMP_Nov_18 where Name like 'A%' OR 'M%';
+Select Name from EMP_Nov_18 where Name like 'A%';
+Select Name from EMP_Nov_18 where Name like 'A%' OR 'M%';
+Select Name from EMP_Nov_18 where Name like 'A%' OR Select Name from EMP_Nov_18 where Name like 'M%';
+Select Name from EMP_Nov_18 where Name like 'A%' OR Name Like 'M%';
+Insert into EMP_Nov_18 values(105,'Mahesh','Delhi',16000,'02-Oct-16','Clerk',300,1014)
+Select Name from EMP_Nov_18 where Name like 'A%' OR Name Like 'M%';
+Select * from EMP_Nov_18 where To_Char(Join_Date,'Mon') = 'Jun';
+Select Name,City,Job from EMP_Nov_18 where Commission NOT NULL;
+Select Name,City,Job from EMP_Nov_18 where Commission IS NULL;
+
+
+
+9]
+Select Name,City,Job from EMP_Nov_18 where Commission IS NOT NULL;
+Select * from EMP_Nov_18 order by Emp_no;
+Select Name,City,Job from EMP_Nov_18 where Commission IS NOT NULL;
+Select Dept_no,count(*) from EMP_Nov_18 group by Dept_no;
+Select * from EMP_Nov_18 where City='Pune';
+Select Join_Date from EMP_Nov_18;
+Select Name,oin_Date from EMP_Nov_18;
+Select Name,Join_Date from EMP_Nov_18;
+Select * from EMP_Nov_18 order by Name;
+Select * from EMP_Nov_18 where Job = 'Clerk' AND Salary < 15000;
+Select * from EMP_Nov_18 where Salary = (Select max(Salary) from EMP_Nov_18);
+Select * from EMP_Nov_18 where Commission IS NULL;
+Select To_Char(Join_Date,'Mon') from EMP_Nov_18;
+Select Name,To_Char(Join_Date,'Mon') from EMP_Nov_18;
+
+
+
+10]
+Select * from Product_Nov_18 where Price < 30000;
+Select * from Product_Nov_18 where Price > 30000;
+Select * from Customer_Nov_18 order by Cust_id;
+Insert into Product_Nov_18 values(151,'Chair',240);
+Select * from Product_Nov_18 order by Prod_id;
+Select * from Customer_Nov_18 order by Cust_id;
+Select Cust_Name,count(*) from Customer_Nov_18 group by Prod_id having count(Prod_id) > 1;
+Select Cust_Name,count(*) from Customer_Nov_18,Product_Nov_18 where Customer_Nov_18.Prod_id = Product_Nov_18.Prod_id group 
+by Prod_id having count(Prod_id) > 1;
+Select Cust_Name,count(*) from Customer_Nov_18 where Customer_Nov_18.Prod_id = Product_Nov_18.Prod_id group by Prod_id having count(Prod_id) > 1;
+Select * from EMP_Nov_18 where City = 'Nagpur';
+Select * from Customer_Nov_18 order by Cust_id;
+Select count(Prod_id) from Product_Nov_18;
+Select * from Product_Nov_18 order by Prod_id;
+Alter table EMP_Nov_18 Add(Warranty number(2) CHECK(Warranty <=1 And Warranty >=10));
+Select * from Product_Nov_18 order by Prod_id;
+
+
+11]
+Select * from Product_Nov_18 order by Prod_id;
+Select * from Customer_Nov_18 order by Cust_id;
+Select * from EMP_Nov_18 order by Emp_no;
+Alter Table EMP_Nov_18 drop column Warranty;
+Select * from EMP_Nov_18 order by Emp_no;
+Alter table Product_Nov_18 Add(Warranty number(2) CHECK(Warranty <=1 And Warranty >=10));
+Select * from Product_Nov_18 order by Prod_id;
+Insert into Product_Nov_18 values(151,'Door',540,15);
+Insert into Product_Nov_18 values(151,'Door',540,5);
+
+Create table Course(
+Dept_id number(5) Primary key,
+Course_Name varchar2(15),
+max_stud_limit,Course_fee);
+
+Create table Course(
+Dept_id number(5) Primary key,
+Course_Name varchar2(15),
+max_stud_limit number(2),
+Course_fee number(5,2));
+
+Create table Course_Nov_18(
+Dept_id number(5) Primary key,
+Course_Name varchar2(15),
+max_stud_limit number(2),
+Course_fee number(5,2));
+
+Create table Course_Nov_18(
+Dept_id number(5) Primary key,
+Course_Name varchar2(15),
+max_stud_limit number(2),
+Course_fee number(5,2));
+
+Select * from Course_Nov_18 order by Dept_id;
+
+create table Student_Nov_18(
+RollNo Number(4),
+First_Name varchar2(20),
+Last_name_Name varchar2(20),
+birth_date date,
+Dept_id_number(5) references Course_Nov_18,
+City varchar2(20);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

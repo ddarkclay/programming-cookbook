@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<conio.h>
+int find_max(int[],int);   /* Actual defination */
+void main()
+{
+clrscr();
+int no[5];
+int m,i,max;
+printf("Enter nos of elements");
+scanf("%d",&m);
+for(i=0;i<m;i++)
+scanf("%d",&no[i]);
+max = find_max(no,m);
+printf("%d",max);
+getch();
+}
+int find_max(int a[],int b)
+{
+int temp=a[0];
+int i,high;
+for(i=1;i<b;i++)
+{
+if(a[i] > temp)
+high = a[i];
+}
+return(high);
+}
+

@@ -1,0 +1,22 @@
+<html>
+<head>
+<script language="JavaScript">
+function cal()
+{
+	var len=cal.arguments.length;
+	var ans=0;
+	for(var i=0;i<len;i++)
+	{
+		ans=ans+cal.arguments[i];
+	}
+	
+	document.write("Sum: "+ans);
+}
+
+</script>
+</head>
+
+
+<body onLoad="cal(10,20)" >
+</body>
+</html>

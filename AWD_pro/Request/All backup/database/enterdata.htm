@@ -1,0 +1,47 @@
+ <html>
+<head>
+<title> Adding to database example </title>
+<script type="text/javascript">
+//16.an ASP program to save the data from database and display.
+//folder security must be given read,write rights to internet user
+<!--
+function validate()
+{
+  if(document.form.name.value=="")
+  {
+   alert("Name is missing");
+   return false;
+  }
+  if(document.form.comments.value.length<8)
+  {
+   alert("Not enough comments entered");
+   return false;
+  }
+  else
+  {
+   return true;
+  }
+}
+//-->
+</script>
+</head>
+<body>
+<Font color="blue" size=+2>
+16.an ASP program to save the data from database and display.
+</font>
+<br><br><hr><br><br>
+
+
+<br><br><br><br><br><br>
+<center>
+
+<form name="form" method="post" action="save.asp">
+
+Name:<input type="text" name="name" maxlength="20"> <br><br>
+Address: <textarea cols="20" rows="8" name="comments" maxlength="200"> </textarea><br><br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="submit" name="Save" value="Save Data" onClick="return validate();">
+</form>
+
+</body>
+</html>

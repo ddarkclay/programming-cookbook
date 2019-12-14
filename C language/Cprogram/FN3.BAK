@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<conio.h>
+void fn_mul(int a,int b)   /* Actual defination */
+{
+int prod;
+prod = n*m;
+printf("%d",prod);
+getch();
+}
+void main()
+{
+clrscr();
+int n,m;
+n=10;
+m=40;
+fn_mul(n,m);
+getch();
+}

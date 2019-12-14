@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>untitled</title>
+	<link rel="stylesheet" type="text/css" href="css/blog.css"
+</head>
+<body>
+	<div class="post">
+		<div class="date">January 2 2018</div>
+	<h1>This is My First Blog</h1>
+		  <p class="quate">When I generated the shellcode, I also cleared the 0x00 byte value from
+		the Restricted Characters text box and made sure that the Selected Encoder
+		was set to Default Encoder. </p>
+		<p>The reason for this is shown in the last two lines
+		of the shellcode, where you see the value \x41 eight times. Why is the capital
+		letter A being repeated? Simple. We need to be able to dynamically specify
+		a PID that needs to be killed, and so we are able to replace the repeated </p>
+		<p>A character block with the PID to be killed and pad the rest of the buffer
+		with NULL values. If we had used an encoder, then those A values would be
+		encoded, and our life would be miserable trying to do a string replacement.
+		This way, we can adapt the shellcode on the fly.</p>
+	</div>
+<hr>
+	<div class="post">
+		<div class="date">January 3 2018</div>
+	<h1>This is My Second Blog</h1>
+			<p class="quate">Once you have entered a valid username and password, the server
+				will allow you to use a full set of commands for transferring files, changing
+				directories, querying the filesystem, and much more.</p>
+				<p>Since the USER and PASS
+				commands are only a small subset of the FTP server’s full capabilities, let’s
+				throw in a couple of commands to test for some more bugs once we are
+				authenticated.</p>
+				<p>Take a look at Listing 9-2 for some additional commands
+				we will include in our protocol skeleton. To gain a full understanding of all
+		commands supported by the FTP protocol, please refer to its RFC.</p>
+
+</body>
+</html>

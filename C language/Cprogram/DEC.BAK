@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ int a[5];
+ int no=0,sum,j,pos;
+ clrscr();
+ for(j=0;j<=4;j++)
+  scanf("%d",&a[j]);
+ for(j=0;j<=4;j++)
+ {
+  pos=4-j;
+  sum=1;
+  while(pos>0)
+  {
+   sum*=2;
+   pos--;
+  }
+  no+=sum*a[j];
+ }
+ printf("Decimal Number is %d",no);
+ getch();}

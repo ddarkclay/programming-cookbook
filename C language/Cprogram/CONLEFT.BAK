@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+
+void main()
+{
+ char dest[20];
+ char sour[20];
+ int dlen,slen,i,j;
+ clrscr();
+ printf("Enter a destination string:");
+ gets(dest);
+ printf("Enter a source string:");
+ gets(sour);
+ dlen = strlen(dest);
+ slen = strlen(sour);
+ printf("dlen = %d slen = %d",dlen,slen);
+ for(j=dlen;j>=0;j--)
+ dest[j+slen] = dest[j];
+ for(i=0;i<slen;i++)
+ dest[i] = sour[i];
+ puts(dest);
+ getch();
+}

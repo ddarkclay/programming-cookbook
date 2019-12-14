@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+   int a= 123,k;
+   k = a>>3;
+   clrscr();
+   printf("%d",k);
+   getch();
+
+   }
+
+
+
+
+

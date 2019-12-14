@@ -1,0 +1,21 @@
+
+Global.asa
+---------------
+<script language="vbscript" runat="server">
+sub Application_OnStart
+Application("Hit")=0
+End sub
+
+sub Session_OnStart
+Application("Hit")=Application("Hit")+1
+End sub
+
+sub Session_OnEnd
+Application("Hit")=Application("Hit")-1
+End sub
+</script>
+
+-------------
+HitCounter.asp
+
+<%Response.Write(Application("Hit")) %> user Visited the site.

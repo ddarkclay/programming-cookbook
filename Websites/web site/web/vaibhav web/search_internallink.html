@@ -1,0 +1,565 @@
+<html>
+<head>
+<title>Icy Flame</title>
+
+<style>
+body {
+  margin: 0;
+  background-color: #f1f1f1;
+}
+
+#navbar {
+  background-color: #333;
+  position: fixed;
+  top: 40px;
+  width:100%;
+  display:block;
+  transition: top 0.3s;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+body {
+  margin: 0;
+  background-color: #f1f1f1;
+}
+
+#navbar {
+  background-color: #333;
+  position: fixed;
+  top: 40px;
+  width:100%;
+  display:block;
+  transition: top 0.3s;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;left:100px;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;left:3px;top:75px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div style="background-color:red;height:40px;width:1365px;"><font color=white size=4px style="position:absolute;top:10px;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Indian Fastest Online Shopping Destination</font>
+	<font color=white size=3px style="position:relative;left:880px;top:10px">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="#about">About Us</a></font>
+	<font color=white size=3px style="position:relative;left:920px;top:10px">Contact Us</font>
+	<font color=white size=3px style="position:relative;left:940px;top:10px">Help Center</font>
+</div>
+
+<div id="navbar" style="z-index:100;height:80px;">
+
+
+  <a href="search.html" target="frame1" style="float: center;">
+  <div  style="float: center; position:left:300px;z-index:30">
+  <div style="width: 40px;
+    height: 7px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+"></div>
+  <div style="width: 40px;
+    height: 7px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+"></div>
+  <div style="width: 40px;
+    height: 7px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+"></div>
+</div>
+</a>
+
+
+
+<img src=logo6.jpg height=78px width=90px style="position:absolute;top:1px;left:90px;z-index:15"></img>
+
+  <a href="icy_flame_home.html"><img src=logo.jpg height=50px width=250px style="position:absolute;top:15px;left:200px;z-index:15"></img></a>
+ <a href="#Cart_in"  style="position:absolute;top:10px;left:500px">Cart</a>
+  <a href="sign_up_form.html"  style="position:absolute;top:10px;left:600px">Sign In</a>
+  <a href="registration.html" style="position:absolute;top:10px;left:700px">Register Now</a>
+     
+  <div style="position:relative;top:15px;left:800px">
+    <form action="#" style="padding:1px;">
+      <input type="text" placeholder="Search.." name="search" style="padding:10px;width:300px;">
+      <button type="submit" style="padding:10px;width:100px;background-color: #4CAF50;
+    color: white;
+    padding: 11px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;">Submit</button>
+    </form>
+  </div>
+</div>
+</div>
+
+
+
+
+  <div class="dropdown-content">
+    <a href="#"><iframe src="search2.html" scroll="no" height="600px" width="1150px" style="border:none;z-index:500;position:absolute;top:-20px;left:-100px"></iframe></a>
+  </div>
+</div>
+
+<script>
+// When the user scrolls down 20px from the top of the document, slide down the navbar
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+        document.getElementById("navbar").style.top = "0";
+    } else {
+        document.getElementById("navbar").style.top = "30px";
+    }
+}
+</script>
+
+
+<iframe name=frame1 src="search.html" height=600px width=1200px  style="position:relative;top:430px;left:30px;z-index:5;border:none;">
+</iframe>
+
+
+
+
+<div style="position:absolute;left:290px;top:120px;z-index:-1;">
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="apple-216bc.jpg" style="width:980px;position:relative;left:40px;">
+
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="gmapp-00a25.jpg" style="width:980px;position:relative;left:40px;">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="MensFashion_App-b7c44.jpg" style="width:980px;position:relative;left:40px;">
+
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="MensFootwearApp-90dfc.jpg" style="width:980px;position:relative;left:40px;">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="P100App-1596c.jpg" style="width:980px;position:relative;left:40px;">
+
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="WomenFashionApp-10fc8.jpg" style="width:980px;position:relative;left:40px;">
+
+</div>
+</div>
+<br>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="gmapp-00a25.jpg" style="width:980px;position:relative;left:40px;">
+
+</div>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span style="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+<br>
+
+<h1  style="position:absolute;left:330px;top:540px;font-family:comic sans ms;color:red;z-index:-1">Today's Deal :-</h1>
+<input type=button value="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp View All &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" style="position:absolute;left:1100px;background-color:aqua;font-size:18px;top:570px;font-family:comic sans ms;color:red;"></input>
+<table cellspacing=1px style="position:absolute;left:330px;top:610px;">
+<tr>
+<td><img src=DOD.jpg height="380" width="210"></img></td>
+<td><img src=add2.png height="380" width="190"></img></td>
+<td><img src=2mobiles.png height="380" width="190"></img></td>
+<td><img src=Trimer.png height="380" width="190"></img></td>
+<td><img src=add1.png height="380" width="190"></img></td>
+</tr>
+</table>
+
+<img src=logo11.gif height=340px width=270px style="position:absolute;top:130px;left:30px;z-index:20">
+</img>
+<h1 style="position:absolute;left:30px;top:1010px;font-family:comic sans ms;color:red;z-index:-1">Treding Products :-</h1>
+<input type=button value="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp View All &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" style="position:absolute;left:1100px;background-color:aqua;font-size:18px;top:1040px;font-family:comic sans ms;color:red;"></input>
+<table cellspacing=1px style="position:absolute;left:30px;top:1090px;">
+<tr>
+<td><img src=Pendrive.png height="340" width="255"></img></td>
+<td><img src=Laptop1.png height="340" width="255"></img></td>
+<td><img src=Laptop2.png height="340" width="255"></img></td>
+<td><img src=Laptop3.png height="340" width="255"></img></td>
+<td><img src=Laptop4.png height="340" width="255"></img></td>
+</tr>
+</table>
+
+
+<br>
+<table>
+<tr style="position:absolute;left:30px;top:1480px;font-family:comic sans ms;color:red;z-index:-1">
+<td><img src=Pendrive_accessories.png height="400" width="432"></img></td>
+<td><img src=Hardisk.png height="400" width="422"></img></td>
+<td><img src=Socks2.png height="400" width="422"></img></td>
+</tr>
+</table>
+
+<h1 style="position:absolute;left:30px;top:1900px;font-family:comic sans ms;color:red;z-index:-1">Featured Kids Watches :-</h1>
+<input type=button value="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp View All &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" style="position:absolute;left:1100px;background-color:aqua;font-size:18px;top:1930px;font-family:comic sans ms;color:red;"></input>
+
+<table style="position:absolute;left:30px;top:1980px;font-family:comic sans ms;color:red;z-index:-1">
+<tr>
+<td><img src=Watch1.png height="340" width="250"></img></td>
+<td><img src=Watch2.png height="340" width="250"></img></td>
+<td><img src=Watch3.png height="340" width="250"></img></td>
+<td><img src=Watch4.png height="340" width="250"></img></td>
+<td><img src=Watch5.png height="340" width="250"></img></td>
+</tr>
+</table>
+
+<h1 style="position:absolute;left:30px;top:2340px;font-family:comic sans ms;color:red;z-index:-1">Offers on Mobile And Accessories :-</h1>
+<input type=button value="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp View All &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" style="position:absolute;left:1100px;background-color:aqua;font-size:18px;top:2370px;font-family:comic sans ms;color:red;"></input>
+
+<table style="position:absolute;left:30px;top:2420px;font-family:comic sans ms;color:red;z-index:-1">
+<tr>
+<td><img src=mobile1.png height="340" width="250"></img></td>
+<td><img src=mobile2.png height="340" width="250"></img></td>
+<td><img src=mobile3.png height="340" width="250"></img></td>
+<td><img src=mobile4.png height="340" width="250"></img></td>
+<td><img src=mobile5.png height="340" width="250"></img></td>
+</tr>
+</table>
+
+<h1 style="position:absolute;left:30px;top:2790px;font-family:comic sans ms;color:red;z-index:-1">Other Offers & Products :-</h1>
+<input type=button value="&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp View All &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" style="position:absolute;z-index:3;left:1100px;background-color:aqua;font-size:18px;top:2820px;font-family:comic sans ms;color:red;"></input>
+<table cellspacing=1px style="position:absolute;left:30px;top:2870px;">
+<tr>
+<td><img src=add6.jpg height="540" width="255"></img></td>
+<td><img src=add7.jpg height="540" width="255"></img></td>
+<td><img src=add3.png height="540" width="255"></img></td>
+<td><img src=add4.png height="540" width="255"></img></td>
+<td><img src=add5.jpg height="540" width="255"></img></td>
+</tr>
+
+<tr>
+<td><img src=add8.jpg height="540" width="255"></img></td>
+<td><img src=add9.jpg height="540" width="255"></img></td>
+<td><img src=add10.jpg height="540" width="255"></img></td>
+<td><img src=add11.jpg height="540" width="255"></img></td>
+<td><img src=add12.png height="540" width="255"></img></td>
+</tr>
+</table>
+
+<div style="position:absolute;top:4000px;height:100px;width:1280px;left:40px;align:Justified;">
+
+<h1 style="color:red;font-family:comic sans ms;">About Icy Flame</h2></a>
+<p style="font-family:comic sans ms;">
+About Icy Flame India Ultimate Online Shopping Site Icy Flames vision is to create Indias most reliable and frictionless commerce ecosystem that creates life-changing experiences
+ for buyers and sellers. In February 2010, Kunal Bahl along with Rohit Bansal, started Icy Flame.com India largest online shopping marketplace, with the widest assortment of 35 million plus 
+ products across 800 plus diverse categories from over 125,000 regional, national, and international brands and retailers.
+ With millions of users and more than 300,000 sellers, Icy Flame is the online shopping site for Internet users across the country, delivering to 6000+ cities and towns in India. In its journey till now, 
+ Icy Flame has partnered with several global marquee investors and individuals such as SoftBank, BlackRock, Temasek, Foxconn, Alibaba, eBay Inc., Premji Invest, Intel Capital, Bessemer Venture Partners, Mr. Ratan Tata, among others. Online Shopping
+ A Boon The trend of online shopping is becoming a household name and so is Icy Flame. 
+ Icy Flame is the preferred choice of hundreds of thousands of online shoppers given 
+ its mammoth assortment of 15 million+ products, quick delivery even to the remotest corners of the country, and daily deals, discounts & offers to make products available at slashed down prices
+ to our valuable customers. Get Started Shop Online Today at Icy FLame If you have been missing out on all the fun of online shopping thinking it requires one to be a technology aficionado then we have good
+ news for you. Shopping online particularly at Icy Flame is a childs play; all you need is a mobile phone or laptop or tablet with Internet connection to get started.
+ Simply log into Icy Flame.com and browse through the wide assortment of products across categories. 
+ Once you have zeroed in on your favorite products, simply place the order by filling in the details; the products will be delivered right at your doorstep. 
+ Fulfill Your Entrepreneurial Dreams! Sell Today at Icy Flame Thanks to easy-to-understand, flexible policies and SD Advisors to help sellers at each step, anyone from a manufacturer
+ to wholesaler to retailer can sell on Icy Flame. Begin your entrepreneurial journey with Icy Flame as a seller by filling a simple registration form here.
+ Once the registration process is done, you can start selling your products to the entire country by sitting at your home or office. Doesn't it sound thrilling? Of course, 
+ it is and the excitement will build up with every order you receive! Start selling at Icy Flame today and see your business reach staggering heights. Shop on the Go – Install Icy Flame
+ App Today! You can shop for your favourite products at Icy Flame even on the go using Icy Flame. Available for both Android and Apple users, the app can be downloaded from Google Play Store and Apple App Store 
+ respectively. The app is quick, user-friendly, and enables shoppers buy products with a breeze. 
+What's more, get timely notifications on your phone or tablet so that you don't miss amazing deals and offers.<a name=about>
+</p>
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+</div>
+
+</div>
+</body>
+</html>

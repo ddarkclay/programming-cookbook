@@ -1,0 +1,39 @@
+<html>
+
+<head>
+<script language="JavaScript">
+
+function f1()
+{
+//var ans="you selected ";
+var ans="";
+if(document.frm1.hotel[0].checked)
+	ans+=" Vaishali  ";
+// ans=ans+"vaishali";
+if(document.frm1.hotel[1].checked)
+	ans+="Le Merdian ";
+
+if(document.frm1.hotel[2].checked)
+	ans+="SUN ";
+if(document.frm1.hotel[3].checked)
+	ans+="obe";
+/*Assign: try for if any one not selected give error msg*/
+alert(ans);
+
+}
+
+</script>
+</head>
+
+<body>
+<form name="frm1">
+<input type="checkbox" name="hotel" value="V">Hotel Vaishali<br>
+<input type="checkbox" name="hotel" value="L">Le Meridian<br>
+<input type="checkbox" name="hotel" value="S">SUN<br>
+<input type="checkbox" name="hotel" value="o">Oberoy
+<input type="button" value="Click" onClick="f1()">
+
+</form>
+</body>
+
+</html>

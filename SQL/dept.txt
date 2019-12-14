@@ -1,0 +1,9 @@
+Create Table Dept(
+Deptno Number(5) Primary key,
+Dname varchar2(20),
+loc varchar2(20));
+
+Insert into Dept values(6535,'Management','Pune');
+Insert into Dept values(5325,'Row Material','Mumbai');
+Select * from Dept order by Deptno;
+Desc Dept;

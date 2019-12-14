@@ -1,0 +1,56 @@
+Create Table Emp(
+Empno Number(5),
+Ename varchar2(20),
+Job varchar2(10),
+MGR Number(5),
+HireDate date,
+Sal Number(10,2),
+Deptno Number(5));
+
+Select * from Emp;
+Desc Emp;
+
+Alter Table Emp Modify(Job varchar2(30));
+Insert into Emp values(101,'Abhishek','Sales Executive',103,'05-Feb-17',15700,3005); 
+Insert into Emp values(102,'Amir','Project Head',103,'18-Sep-16',22700,6535); 
+Insert into Emp values(103,'Jignesh','Murchand Officer',null,'25-Jan-15',35400,3005); 
+Insert into Emp values(104,'Lalit','Sales Executive',103,'05-Feb-18',17700,6535); 
+Insert into Emp values(105,'Nikhil','Employee Head',103,'24-Oct-17',24700,3005);
+
+Update Emp set Job = 'Manager' where Empno = 103;
+Select Distinct Job from Emp;
+Select * from Emp Order by Empno;
+
+Select Empno,Ename,Deptno from Emp where Deptno IN(6535);
+Select Ename,Sal from Emp where Sal between 25000 And 40000;
+
+Alter Table Emp Add(Address varchar2(30));
+Alter Table Emp drop column Address;
+
+Alter Table Emp modify(Empno Number(5) Primary key);
+Alter Table Emp modify(Deptno Number(5) Foreign key);
+
+Select AVG(Sal) from Emp;
+Select Min(Sal) from Emp;
+Select Max(Sal) from Emp; 
+Select sum(Sal) from Emp;
+
+Select Ename from Emp where To_char(HireDate,'Mon') = 'Feb';
+Select To_char(HireDate,'Mon') from Emp where Ename = 'Nikhil';
+Select * from Emp where To_char(Hiredate,'yyyy') = '2015';
+
+/*Sub Query*/
+Select Ename,Sal from Emp where Sal = (Select max(sal) from Emp);
+Select Ename,Sal from Emp where Sal < (Select AVG(sal) from Emp where Job='Manager');
+Select Ename from Emp where MGR = (Select Empno from Emp where Ename='Jignesh');
+Update Emp set MGR=null where Empno=105;
+
+/*Group by Clause*/
+Select Job,sum(sal) from Emp group by Job;
+Select Deptno,max(sal) from Emp group by Deptno;
+Select Deptno,count(*) from emp group by Deptno having Deptno=6535;
+
+/*View*/
+Create view v1 as Select Ename,Sal from Emp where Sal < 25000;
+Select * from V1;
+Drop view V1;

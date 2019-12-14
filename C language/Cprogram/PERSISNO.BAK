@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int no,div,rem,prod,cnt=0;
+clrscr();
+printf("Enter any no");
+scanf("%d",&no);
+while(no>=10)
+{
+div=no/10;
+rem = no%10;
+prod = div*rem;
+no = prod;
+cnt++;
+}
+printf("Persistence  no = %d",cnt);
+getch();
+}

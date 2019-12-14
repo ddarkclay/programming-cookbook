@@ -1,0 +1,41 @@
+<html>
+
+<head>
+<script language="JavaScript">
+
+function f1()
+{
+var str="";
+if(document.frm1.color.selectedIndex==0)
+  str += " red ";
+
+if(document.frm1.color.selectedIndex==1)
+str+=" blue ";
+
+if(document.frm1.color.selectedIndex==2)
+str+=" green ";
+
+alert(str);
+}
+
+</script>
+</head>
+
+
+<body>
+
+<form name="frm1">
+
+<select name="color" >
+<option value="red">red</option>
+<option value="blue">blue</option>
+<option value="green">green</option>
+</select>
+
+<input type="button" value="Click" onClick="f1()">
+
+</form>
+
+</body>
+
+</html>

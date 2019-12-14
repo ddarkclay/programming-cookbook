@@ -1,0 +1,33 @@
+<html>
+<head>
+<script language="JavaScript">
+function f2()
+{
+str="";
+
+if(document.f1.color.selectedIndex==0)
+str= " red ";
+alert (str);
+if(document.f1.color.selectedIndex==1)
+str=" blue ";
+
+document.f1.bgcolor=str;
+}
+</script>
+</head>
+
+<body>
+<form name=f1 >
+
+<!--action="<?php echo $_SERVER['PHP_SELF'];?>-->
+
+Color
+<select name=color>
+
+<option value=Red>Red</option>
+<option value=Black>Black</option>
+</select>
+<input type=button value=Click onClick=f2()>
+</form>
+</body>
+</html>

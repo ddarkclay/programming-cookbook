@@ -1,0 +1,117 @@
+<Html>
+<head>
+<title>
+Css Dropdown Menu
+</title>
+
+<style>
+#div1 {
+	margin:100px 100px;
+	background:red;
+	text-align:center;
+
+}
+ul {
+	list-style:none;
+	padding:0px;
+	margin:0px;
+	
+
+}
+
+ul li {
+	background:black;
+	color:white;
+	width:180px;
+	float:left;
+	height:50px;
+	border:1px solid orange;
+	text-align:center;
+	line-height:50px;
+	font-size:20px;
+	position:relative;
+	box-shadow:5px 5px 20px red;
+}
+ul li ul li {
+	 background:purple;
+}
+
+ul li ul li ul li {
+	background:brown;
+}
+
+ul li a {
+	color:white;
+	text-decoration:none;
+	display:block;
+
+}
+ul li a:hover {
+	background:green;
+	font-size:22px;
+
+
+}
+
+ul ul {
+	display:none;
+}
+
+ul li:hover > ul {
+	display:block;
+
+}
+
+ul ul ul {
+	margin-left:180px;
+	position:absolute;
+	top:0;
+}
+
+#div2 {
+	margin-left:200px;
+
+}
+
+</style>
+</head>
+
+ 
+<body bgcolor="orange">
+<div id=div1>
+<h1>Dropdown Menu</h1>
+</div>
+<div id=div2>
+<ul>
+	<li><a href="#">Home</a></li>
+	<li><a href="#">About Us</a></li>
+	<li><a href="#">Contact Us</a></li>
+	<li><a href="#">Gallary</a>
+		<ul>
+			<li><a href="#">Video Gallary</a>
+				<ul>
+					<li><a href="#">3gp</a></li>
+					<li><a href="#">Mp4</a></li>
+					<li><a href="#">HD</a></li>
+					
+				</ul>
+			
+			</li>
+			<li><a href="#">Audio Gallary</a>
+				<ul id="audio">
+					<li><a href="#">mp3</a></li>
+					<li><a href="#">avi</a></li>
+					
+				</ul>
+			
+			</li>
+		</ul>
+	</li>
+	<li><a href="#">Privacy</a></li>
+
+</ul>
+</div>
+</body>
+</html>
+
+

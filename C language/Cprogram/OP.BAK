@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+char name[5][20] =  {"Roshni","Manish","Mona","Baiju","Ritu"};
+int i;
+char *t;
+clrscr();
+t = name[3];
+name[3] = name[4];
+name[4] = t;
+for(i = 0;i<=4;i++)
+printf("\n%s",name[i]);
+getch();
+}

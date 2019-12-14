@@ -1,0 +1,23 @@
+<html>
+<head>
+<script>
+function facto()
+{
+var i, no, fact;
+fact=1;
+no=parseInt(document.frm1.t1.value);
+for(i=1; i<=no; i++)  
+{
+fact= fact*i;
+}  
+alert(fact);
+}
+</script>
+</head>
+<body>
+<form name="frm1">
+Enter Num:<input type="text" name="t1"><br><br>
+<input type="button" value="click" onclick="facto()">
+</form>
+</body>
+</html>
