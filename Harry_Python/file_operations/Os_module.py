@@ -1,0 +1,13 @@
+import os
+print(os.getcwd())
+os.chdir("/root")
+print(os.getcwd())
+# print(os.listdir())
+# os.mkdir("Test")
+# os.rmdir("Test")
+# os.makedirs("Test/This")
+# print(os.getenv("Path"))
+print(os.path.join("/root/Test/","file.txt"))
+print(os.path.exists("/root/snap"))
+print(os.path.isfile("img.jpg"))
+print(os.path.isdir("/root/Debian_Software"))
